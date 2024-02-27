@@ -1,8 +1,11 @@
 # HTTP_Web_Service
 
-This project is originated from CSE138 Ditributed System course at University California under the provision of Prof. Liting Hu. 
+This project originated from CSE138 Distributed System course at University of California Santa Cruz under the provision of Prof. Liting Hu. 
 
-Contributers:
+Contributors:
+
 Jun Hayashida
+
 Justin Morales
+
 Tyler Fong
