@@ -28,7 +28,7 @@ Example:
 200
 ```
 
-### /hello/<name>
+### /hello/'<name>'
 - Accepts a **POST** request with the path-parameter "name".
 - Return the JSON response body {"message":"Hi, <name>."} with status code 200.
 
