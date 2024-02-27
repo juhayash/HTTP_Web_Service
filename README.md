@@ -14,7 +14,6 @@ This project originated from CSE138 Distributed System course at University of C
 # Example Python code
 def hello_world():
     print("Hello, world!")
-
 ```
 
 
