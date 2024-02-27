@@ -54,6 +54,20 @@ Example:
 200
 ```
 
+- Accepts a **POST** request with a msg query parameter.
+- Returns the JSON response body {"message":"\<msg\"> with status code 200 where \<msg\> is the string passed to the msg query parameter.
+
+Example:
+
+`curl--request POST--header "Content-Type: application/json"--write-out "\n%{http_code}\n" "http://localhost:8090/test?msg=foo`
+```
+{"message":"foo"}
+200
+```
+
+- If receiving a POST request without any msg query parameter, it returns the error message {"Bad Request"} with status code 400.
+- If receiving an unknown query parameter, it returns the error message {"Bad Request"} with status code 400.
+
 
 
 
@@ -83,6 +97,8 @@ Justin Morales
 Tyler Fong
 
 ### Citations:
+- "What even is a container: namespaces and cgroups": https://jvns.ca/blog/2016/10/10/what-even-is-a-container/
+- "RESTful Web Service": http://www.restfulwebapis.org/rws.html
 - "Basic Flask operation for Python": https://www.youtube.com/watch?v=Z1RJmh_OqeA
 - "key-value store/pair: https://hazelcast.com/glossary/key-value-store/
 - "jsonify()": nhttps://www.geeksforgeeks.org/use-jsonify-instead-of-json-dumps-in-flask/#
