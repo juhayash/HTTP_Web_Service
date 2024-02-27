@@ -7,19 +7,30 @@ This project originated from CSE138 Distributed System course at University of C
 
 ## HTTP Interface
 ### /hello
-- Accepts a **GET** request (with no parameter)
-- Return the JSON response body {"message": "world"} and status 200
+- Accepts a **GET** request with no parameter.
+- Return the JSON response body {"message": "world"} with status code 200.
 
 Example:
 
 `$ curl--request GET--header "Content-Type: application/json"--write-out "\n%{http_code}\n" http://localhost:8090/hello`
 ```
 {"message":"world"}
- 200
+200
 ```
 
-- Accepts a **POST** request (with or without any response body)
-- Return the JSON response body {"Method Not Allowed"} with status 405
+- If receiving a POST request with or without any response body, it returns the error message {"Method Not Allowed"} with status code 405.
+
+Example:
+
+`$ curl--request POST--write-out "\n%{http_code}\n" http://localhost:8090/hello/slug`
+```
+{"message":"Hi, slug."}
+200
+```
+
+### /hello/<name>
+- Accepts a **POST** request with the path-parameter "name".
+- Return the JSON response body {"message":"Hi, <name>."} with status code 200.
 
 Example:
 
@@ -28,6 +39,34 @@ Example:
 Method Not Allowed
 405
 ```
+
+- If receiving a GET request, it returns the error message {"Method Not Allowed"} with status code 405.
+
+### /test
+- Accepts a **GET** request with no parameter.
+- Returns the JSON response body {"message":"test is successful"} with status code 200
+
+Example:
+
+`$ curl--request GET--header "Content-Type: application/json"--write-out "\n%{http_code}\n" http://localhost:8090/test`
+```
+{"message":"test is successful"}
+200
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### Acknowdgegets:
 
