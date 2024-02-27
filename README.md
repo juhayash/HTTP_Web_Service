@@ -55,7 +55,7 @@ Example:
 ```
 
 - Accepts a **POST** request with a msg query parameter.
-- Returns the JSON response body {"message":"\<msg\"> with status code 200 where \<msg\> is the string passed to the msg query parameter.
+- Returns the JSON response body {"message":"\<msg\">} with status code 200 where \<msg\> is the string passed to the msg query parameter.
 
 Example:
 
