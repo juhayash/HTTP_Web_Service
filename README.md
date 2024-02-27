@@ -30,7 +30,7 @@ Example:
 
 ### /hello/\<name\>
 - Accepts a **POST** request with the path-parameter "name".
-- Return the JSON response body {"message":"Hi, <name>."} with status code 200.
+- Return the JSON response body {"message":"Hi, \<name\>."} with status code 200.
 
 Example:
 
