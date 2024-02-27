@@ -1,6 +1,23 @@
 # HTTP_Web_Service
 This project originated from CSE138 Distributed System course at University of California Santa Cruz under the assistance of Prof. Liting Hu. 
 
+## HTTP Web Service
+- Differentiates between requests with different HTTP verbs (GET/POST) and URI paths (/hello, /hello/<name>, and /test).
+
+
+## HTTP Interface
+### /hello
+- Accepts a GET request (with no parameter)
+- Return the JSON response body {"message": "world"} and status 200
+
+```markdown
+# Example Python code
+def hello_world():
+    print("Hello, world!")
+```python
+
+
+
 ### Acknowdgegets:
 
 TA: Cheng-Wei Ching
