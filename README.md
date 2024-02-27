@@ -10,7 +10,7 @@ This project originated from CSE138 Distributed System course at University of C
 - Accepts a GET request (with no parameter)
 - Return the JSON response body {"message": "world"} and status 200
 
-```markdown
+```python
 # Example Python code
 def hello_world():
     print("Hello, world!")
