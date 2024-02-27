@@ -7,7 +7,7 @@ This project originated from CSE138 Distributed System course at University of C
 
 ## HTTP Interface
 ### /hello
-- Accepts a GET request (with no parameter)
+- Accepts a **GET** request (with no parameter)
 - Return the JSON response body {"message": "world"} and status 200
 
 Example:
@@ -18,7 +18,16 @@ Example:
  200
 ```
 
+- Accepts a **POST** request (with or without any response body)
+- Return the JSON response body {"Method Not Allowed"} with status 405
 
+Example:
+
+`$ curl--request POST--write-out "\n%{http_code}\n" http://localhost:8090/hello`
+```
+Method Not Allowed
+405
+```
 
 ### Acknowdgegets:
 
