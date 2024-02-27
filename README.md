@@ -9,7 +9,7 @@ This project originated from CSE138 Distributed System course at University of C
 ### /hello
 - Accepts a GET request (with no parameter)
 - Return the JSON response body {"message": "world"} and status 200
-- 
+
 Example:
 
 `$ curl--request GET--header "Content-Type: application/json"--write-out "\n%{http_code}\n" http://localhost:8090/hello`
