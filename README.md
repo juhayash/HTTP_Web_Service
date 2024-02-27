@@ -70,6 +70,7 @@ Example:
 - If receiving an unknown query parameter, it returns the error message {"Bad Request"} with status code 400.
 
 
+
 ## assignment2.py
 ### Key Features
 #### In-Memory Store
@@ -135,8 +136,56 @@ def forward_key_request(key):
 
 
 
+### HTTP Service
+- **Service Creation**: Implement an HTTP web service that recognizes different HTTP verbs and URI paths.
 
+Example:
+```python
+@app.route('/hello', methods=['GET', 'POST'])
+def hello():
+    if request.method == 'GET':
+        return jsonify({"message": "world"}), 200
+    else:  # POST request
+        abort(405)  # Method Not Allowed
+```
+```
+@app.route('/hello/<name>', methods=['GET', 'POST'])
+def hello_name(name):
+    if request.method == 'POST':
+        return jsonify({"message": f"Hi, {name}."}), 200
+    else:  # GET request
+        abort(405)  # Method Not Allowed
+```
 
+- **Containerization**: Package the service in a container image listening on port 8090, described by a Dockerfile or Containerfile.
+
+### Endpoints and Behaviors
+### /hello
+- GET: Returns {"message":"world"} with status 200.
+- POST: Responds with status 405 (Method Not Allowed).
+
+### /hello/\<name\>
+- POST: Accepts a name as a path parameter, returning {"message":"Hi, \<name\>."} with status 200.
+- GET: Responds with status 405.
+
+### /test
+- GET: Returns {"message":"test is successful"} with status 200.
+- POST with msg query parameter: Returns {"message":"\<msg\>"} with status 200.
+- POST without msg query parameter: Responds with status 400 (Bad Request).
+
+Example:
+```python
+@app.route('/test', methods=['GET', 'POST'])
+def test():
+    if request.method == 'GET':
+        return jsonify({"message": "test is successful"}), 200
+    elif request.method == 'POST':
+        msg = request.args.get('msg')
+        if msg:
+            return jsonify({"message": msg}), 200
+        else:
+            abort(400)  # Bad Request
+```
 
 
 
