@@ -118,7 +118,54 @@ def forward_key_request(key):
     return jsonify(response.json()), response.status_code
 ```
 
+## assignment3.py
+### Key Features
+#### Replicated Key-Value Store Design
+**Replication**: Each instance of your key-value store replicates its data across all other instances to ensure fault tolerance and data availability.
+**Fault Tolerance**: The system remains available even if one or more replicas fail.
+**Causal Consistency**: Updates respect the causal order of events, ensuring that all replicas maintain a consistent view of the data that respects the sequence of operations.
 
+#### Communication Among Replicas
+- Replicas communicate any state changes (additions, deletions of keys) to each other, ensuring all replicas have the same data.
+- When a replica goes down, its data is not lost since it's replicated across other running instances.
+- Replicas use causal metadata to provide a causally consistent view to the clients. This metadata is exchanged between clients and replicas to ensure clients always see a consistent state of the data.
+
+#### API Design
+- View Management: Handles adding or removing replicas in the system.
+    - PUT /view: Add a new replica. If the replica already exists, the operation is idempotent.
+    - GET /view: Retrieve the current list of replicas.
+    - DELETE /view: Remove an existing replica from the cluster.
+
+- Data Management with causal consistency.
+    - PUT /kvs/\<key\>: Add or update a key-value pair, including causal metadata for consistency.
+    - GET /kvs/\<key\>: Retrieve the value for a key, respecting causal dependencies.
+    - DELETE /kvs/\<key\>: Remove a key-value pair, ensuring causal consistency.
+
+#### Ensuring Safety and Liveness
+- **Causal Consistency** (Safety)
+    - Enforces an agreement on the order of causally related writes. This is crucial for maintaining a consistent state across replicas that respect the sequence of operations.
+    - Implementing causal consistency involves managing metadata that captures the history or sequence of updates, allowing the system to determine the causal relationships between operations.
+
+- **Eventual Consistency** (Liveness)
+    - Ensures that if no new writes are made, all replicas will eventually reach the same state.
+    - This property is achieved through continuous synchronization of updates among replicas, ensuring that any temporary discrepancies between replicas are resolved over time.
+
+#### Technical Considerations
+- Detecting Replica Failures
+    - Implement heartbeats or periodic checks among replicas to detect failures.
+    - Upon detecting a failure, the replica is removed from the view, and other replicas are informed to update their views accordingly.
+
+- Adding a New Replica:
+    - The new replica broadcasts its presence.
+    - Existing replicas add the new replica to their view.
+    - The new replica fetches the current state of the key-value store from an existing replica to initialize its local store.
+
+- Metadata Management for Causal Consistency:
+    - Use vector clocks or similar mechanisms to track causal dependencies among operations.
+    - Ensure that operations are processed in a way that respects these dependencies, maintaining the causal consistency of the system.
+
+- Conflict Resolution
+    - In cases where concurrent updates occur, define a conflict resolution strategy, such as last-write-wins or merging updates based on timestamps or logical clocks.
 
 
 ### Acknowdgegets:
