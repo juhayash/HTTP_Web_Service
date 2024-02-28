@@ -142,11 +142,11 @@ def forward_key_request(key):
     - DELETE /kvs/\<key\>: Remove a key-value pair, ensuring causal consistency.
 
 #### Ensuring Safety and Liveness
-- **Causal Consistency** (Safety)
+- **Causal Consistency (Safety)**
     - Enforces an agreement on the order of causally related writes. This is crucial for maintaining a consistent state across replicas that respect the sequence of operations.
     - Implementing causal consistency involves managing metadata that captures the history or sequence of updates, allowing the system to determine the causal relationships between operations.
 
-- **Eventual Consistency** (Liveness)
+- **Eventual Consistency (Liveness)**
     - Ensures that if no new writes are made, all replicas will eventually reach the same state.
     - This property is achieved through continuous synchronization of updates among replicas, ensuring that any temporary discrepancies between replicas are resolved over time.
 
