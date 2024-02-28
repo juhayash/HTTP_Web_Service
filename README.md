@@ -121,12 +121,9 @@ def forward_key_request(key):
 ## assignment3.py
 ### Key Features
 #### Replicated Key-Value Store Design
-
-**Replication**: Each instance of your key-value store replicates its data across all other instances to ensure fault tolerance and data availability.
-
-**Fault Tolerance**: The system remains available even if one or more replicas fail.
-
-**Causal Consistency**: Updates respect the causal order of events, ensuring that all replicas maintain a consistent view of the data that respects the sequence of operations.
+- **Replication**: Each instance of your key-value store replicates its data across all other instances to ensure fault tolerance and data availability.
+- **Fault Tolerance**: The system remains available even if one or more replicas fail.
+- **Causal Consistency**: Updates respect the causal order of events, ensuring that all replicas maintain a consistent view of the data that respects the sequence of operations.
 
 #### Communication Among Replicas
 - Replicas communicate any state changes (additions, deletions of keys) to each other, ensuring all replicas have the same data.
