@@ -1,7 +1,7 @@
 This project originated from CSE138 Distributed System course at University of California Santa Cruz under the assistance of Prof. Liting Hu. 
 
 # HTTP Interface
-## assignment1.py
+## HTTP_Service.py
 ### HTTP Service
 - **Service Creation**: Implement an HTTP web service that recognizes different HTTP verbs and URI paths.
 - **Containerization**: Package the service in a container image listening on port 8090, described by a Dockerfile or Containerfile.
@@ -55,7 +55,7 @@ def test():
 ```
 
 
-## assignment2.py
+## InMemory_Store.py
 ### Key Features
 #### In-Memory Store
 - The key-value data is stored in memory using a Python dictionary, allowing for quick access and modifications.
@@ -118,7 +118,7 @@ def forward_key_request(key):
     return jsonify(response.json()), response.status_code
 ```
 
-## assignment3.py
+## Replicated_KeyValue_Store.py
 ### Key Features
 #### Replicated Key-Value Store Design
 - **Replication**: Each instance of your key-value store replicates its data across all other instances to ensure fault tolerance and data availability.
