@@ -176,14 +176,14 @@ Tutor: Albert Lee
 
 ### Team Contributors:
 
-Jun Hayashida:
-- HTTP_Service.py
+### Jun Hayashida:
+- **HTTP_Service.py**
     - Coded all.
 
-- InMemory_Store.py
+- **InMemory_Store.py**
     - I implemented a Flask-based API to manage an in-memory keyvalue store, which supports 'PUT', 'GET', and 'DELETE' HTTP methods. I added input validation, error handling, and logic to create, update, or delete key-value pairs with corresponding HTTP status codes as specified in the assignment documentation. I also configured the application to run on '0.0.0.0' with port '8090'.
 
-- Replicated_KeyValue_Store.py
+- **Replicated_KeyValue_Store.py**
     - Contributed to the design and implementation of vector clock operation to ensure maintaining eventual consistency across the distributed system. Involved in testing the code to identify and rectify errors, ensuring the system's reliability and correctness. Played a role in enhancing the readability and efficiency of the code, making it more maintainable and performant.
 
 Justin Morales
