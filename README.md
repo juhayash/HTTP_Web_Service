@@ -151,20 +151,20 @@ def forward_key_request(key):
     - This property is achieved through continuous synchronization of updates among replicas, ensuring that any temporary discrepancies between replicas are resolved over time.
 
 #### Technical Considerations
-- Detecting Replica Failures
+- **Detecting Replica Failures**
     - Implement heartbeats or periodic checks among replicas to detect failures.
     - Upon detecting a failure, the replica is removed from the view, and other replicas are informed to update their views accordingly.
 
-- Adding a New Replica:
+- **Adding a New Replica:**
     - The new replica broadcasts its presence.
     - Existing replicas add the new replica to their view.
     - The new replica fetches the current state of the key-value store from an existing replica to initialize its local store.
 
-- Metadata Management for Causal Consistency:
+- **Metadata Management for Causal Consistency:**
     - Use vector clocks or similar mechanisms to track causal dependencies among operations.
     - Ensure that operations are processed in a way that respects these dependencies, maintaining the causal consistency of the system.
 
-- Conflict Resolution
+- **Conflict Resolution**
     - In cases where concurrent updates occur, define a conflict resolution strategy, such as last-write-wins or merging updates based on timestamps or logical clocks.
 
 
