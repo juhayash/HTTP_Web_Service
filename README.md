@@ -178,13 +178,20 @@ Tutor: Albert Lee
 
 ### Jun Hayashida:
 - **HTTP_Service.py**
-    - Coded all.
+    - Developed an HTTP web service using Flask to differentiate between requests using various HTTP verbs (GET and POST) and URI paths (/hello, /hello/<name>, and /test), showcasing the ability to handle dynamic web service requests efficiently.
+    - Implemented logic to return appropriate responses based on the HTTP method and URI path, including error handling for unsupported methods, to demonstrate an understanding of RESTful principles and HTTP status codes.
+    - Conducted thorough testing to ensure the service accurately processes requests and returns the expected outcomes, contributing to the system's reliability and robustness.
+    - Optimized the code structure for improved readability and maintainability, facilitating easier future enhancements and understanding for other developers.
 
 - **InMemory_Store.py**
-    - I implemented a Flask-based API to manage an in-memory keyvalue store, which supports 'PUT', 'GET', and 'DELETE' HTTP methods. I added input validation, error handling, and logic to create, update, or delete key-value pairs with corresponding HTTP status codes as specified in the assignment documentation. I also configured the application to run on '0.0.0.0' with port '8090'.
+    - Implemented a Flask-based API to manage an in-memory keyvalue store, which supports 'PUT', 'GET', and 'DELETE' HTTP methods.
+    - Added input validation, error handling, and logic to create, update, or delete key-value pairs with corresponding HTTP status codes as specified in the assignment documentation.
+    - Configured the application to run on '0.0.0.0' with port '8090'.
 
 - **Replicated_KeyValue_Store.py**
-    - Contributed to the design and implementation of vector clock operation to ensure maintaining eventual consistency across the distributed system. Involved in testing the code to identify and rectify errors, ensuring the system's reliability and correctness. Played a role in enhancing the readability and efficiency of the code, making it more maintainable and performant.
+    - Contributed to the design and implementation of vector clock operation to ensure maintaining eventual consistency across the distributed system.
+    - Involved in testing the code to identify and rectify errors, ensuring the system's reliability and correctness.
+    - Played a role in enhancing the readability and efficiency of the code, making it more maintainable and performant.
 
 Justin Morales
 - HTTP_Service.py
@@ -194,7 +201,7 @@ Justin Morales
     - Coded getting forwarding address, forward requests from client node to main node by creating an API to accept requests and send that information with the proper url to main.
 
 - Replicated_KeyValue_Store.py
-    - Designed the key/value store routes and how they function, designed the broadcasting mechanism we are using, designed the vector clock functionality, designed the view routes and their functionality, designed the mechanism of how the replicas discover each other in a system, designed the mechanism that checks if a replica is out of date, designed a mechanism for replicas to discover if another replica has been downed or is not responding so that it may be removed from the system. Wrote the Mechnism Description.
+    - Designed the key/value store routes and how they function, the broadcasting mechanism we are using, the vector clock functionality, the view routes and their functionality, the mechanism of how the replicas discover each other in a system, the mechanism that checks if a replica is out of date, a mechanism for replicas to discover if another replica has been downed or is not responding so that it may be removed from the system.
 
 Tyler Fong
 - HTTP_Service.py
