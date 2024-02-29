@@ -176,11 +176,35 @@ Tutor: Albert Lee
 
 ### Team Contributors:
 
-Jun Hayashida
+Jun Hayashida:
+- HTTP_Service.py
+    - Coded all.
+
+- InMemory_Store.py
+    - I implemented a Flask-based API to manage an in-memory keyvalue store, which supports 'PUT', 'GET', and 'DELETE' HTTP methods. I added input validation, error handling, and logic to create, update, or delete key-value pairs with corresponding HTTP status codes as specified in the assignment documentation. I also configured the application to run on '0.0.0.0' with port '8090'.
+
+- Replicated_KeyValue_Store.py
+    - Contributed to the design and implementation of vector clock operation to ensure maintaining eventual consistency across the distributed system. Involved in testing the code to identify and rectify errors, ensuring the system's reliability and correctness. Played a role in enhancing the readability and efficiency of the code, making it more maintainable and performant.
 
 Justin Morales
+- HTTP_Service.py
+    - None
+
+- InMemory_Store.py
+    - Coded getting forwarding address, forward requests from client node to main node by creating an API to accept requests and send that information with the proper url to main.
+
+- Replicated_KeyValue_Store.py
+    - Designed the key/value store routes and how they function, designed the broadcasting mechanism we are using, designed the vector clock functionality, designed the view routes and their functionality, designed the mechanism of how the replicas discover each other in a system, designed the mechanism that checks if a replica is out of date, designed a mechanism for replicas to discover if another replica has been downed or is not responding so that it may be removed from the system. Wrote the Mechnism Description.
 
 Tyler Fong
+- HTTP_Service.py
+    - None
+
+- InMemory_Store.py
+    - Provided assignment 1 to work off from. Merging parts 1 and 2 in git and testing.
+
+- Replicated_KeyValue_Store.py
+    - None
 
 ### Citations:
 - "What even is a container: namespaces and cgroups": https://jvns.ca/blog/2016/10/10/what-even-is-a-container/
